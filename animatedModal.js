@@ -80,7 +80,7 @@
                 } 
 
                  if (id.hasClass(settings.modalTarget+'-on')) {
-                    settings.beforeOpen();
+                    settings.beforeOpen(event);
                     id.css({'opacity':settings.opacityIn,'z-index':settings.zIndexIn});
                     id.addClass(settings.animatedIn);  
                     id.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', afterOpen);
@@ -94,7 +94,7 @@
             event.preventDefault();
             $('body, html').css({'overflow':'auto'});
 
-            settings.beforeClose(); //beforeClose
+            settings.beforeClose(event); //beforeClose
             if (id.hasClass(settings.modalTarget+'-on')) {
                 id.removeClass(settings.modalTarget+'-on');
                 id.addClass(settings.modalTarget+'-off');
